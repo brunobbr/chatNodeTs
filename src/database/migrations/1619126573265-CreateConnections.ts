@@ -35,9 +35,9 @@ export class CreateConnections1619126573265 implements MigrationInterface {
                         type: "timestamp",
                         default: "now()",
                     },
-                ]
-            })
-        )
+                ],
+            }),
+        );
         await queryRunner.createForeignKey(
             "connections",
             new TableForeignKey({
@@ -47,8 +47,8 @@ export class CreateConnections1619126573265 implements MigrationInterface {
               columnNames: ["user_id"],
               onDelete: "SET NULL",
               onUpdate: "SET NULL",   
-            })
-        )
+            }),
+        );
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
